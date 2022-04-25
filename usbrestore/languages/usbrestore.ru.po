@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: ru\n"
+
+#: tmainform.caption
+msgid "USBRestore"
+msgstr ""
+
+#: tmainform.label1.caption
+msgid ""
+"Attention! The factory dos partition and the FAT32 file\n"
+"system will be restored on the selected device!"
+msgstr ""
+"Внимание! На выбранном устройстве будут восстановлены\n"
+"заводской раздел dos и файловая система FAT32!"
+
+#: tmainform.reloadbtn.caption
+msgid "R"
+msgstr ""
+
+#: tmainform.reloadbtn.hint
+msgid "Reread"
+msgstr "Перечитать"
+
+#: tmainform.startbtn.caption
+msgid "Start"
+msgstr "Старт"
+
+#: tmainform.statictext2.caption
+msgid "License: GPLv3   Author: alex_q_2000 (C) 2022   URL: https://linuxforum.ru"
+msgstr "Лицензия: GPLv3   Автор: alex_q_2000 (C) 2022   URL: https://linuxforum.ru"
+
+#: tmainform.stopbtn.caption
+msgid "Stop"
+msgstr "Стоп"
+
+#: unit1.sdestroydata1
+msgid "All data on the selected device "
+msgstr "Все данные на выбранном устройстве "
+
+#: unit1.sdestroydata2
+msgid " will be destroyed! Continue?"
+msgstr " будут уничтожены! Продолжить?"
+
+#: unit1.srootprivileges
+msgid "Root privileges are required! Terminate!"
+msgstr "Требуются привилегии root! Отмена!"
+
+#: unit1.sunderway
+msgid "The device recovery procedure is underway! Abort?"
+msgstr "Запущена процедура восстановления! Отменить?"
