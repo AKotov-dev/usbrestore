@@ -119,12 +119,11 @@ object MainForm: TMainForm
     AnchorSideRight.Control = StartBtn
     AnchorSideBottom.Control = ReloadBtn
     AnchorSideBottom.Side = asrBottom
-    Left = 628
+    Left = 630
     Height = 36
     Top = 15
     Width = 90
     Anchors = [akTop, akRight, akBottom]
-    BorderSpacing.Right = 2
     Caption = 'Stop'
     Glyph.Data = {
       36040000424D3604000000000000360000002800000010000000100000000100
