@@ -32,7 +32,7 @@ vendor=alex_q_2000 (C) 2022
 summary=Restoring the factory settings of flash drives
 
 [URLCOPY]
-urlcopy=111
+urlcopy=https://github.com/AKotov-dev/usbrestore
 
 [LICENSE]
 license=GPLv3
@@ -75,7 +75,7 @@ deb=1
 4=#gtk-update-icon-cache -q -f /usr/share/icons/hicolor
 
 [URL32]
-url32=111
+url32=https://github.com/AKotov-dev/usbrestore
 
 [URL64]
 url64=
