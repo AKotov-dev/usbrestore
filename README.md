@@ -12,3 +12,5 @@ To bring the flash drive to normal, factory parameters, a USBRestore was created
 5. Checks the section for errors with correction
 
 Be careful when choosing a device from the list! The program itself determines removable devices, but their variety is great, so pay attention to the capacity (G), i.e. Gigabytes, when working.
+
+![](https://github.com/AKotov-dev/usbrestore/blob/main/ScreenShot.png)
