@@ -78,7 +78,7 @@ toolversion=2.2.0
 [INFO]
 0=To bring the USB flash drive to normal, factory parameters, USBRestore was created. He does a forced "resuscitation" and removes all unnecessary things from the flash drive by pressing one button:
 1=
-2=v0.3 + Packages Dependencies: util-linux dosfstools
+2=v0.3 + dependencies: util-linux dosfstools
 3=
 4=v0.2
 5=+ correction of log output
