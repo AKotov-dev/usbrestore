@@ -1,6 +1,8 @@
 # USBRestore
 **Restoring the factory settings of USB flash drives**
 
+Dependencies: util-linux dosfstools
+
 If earlier ISO installation images were recorded on the USB flash drive, for example, through Rufus programs (GPT/EFI/Windows), or the GRUB bootloader was installed, there may be problems with the USB flash drive in the future: all of the above is not deleted even after formatting. Therefore, the flash drive may not load in televisions, set-top boxes, etc. All these devices, like the MgaRemix bootloader, require the use of native/factory flash drive parameters: dos partition, FAT32 file system.
 
 To bring the flash drive to normal, factory parameters, a USBRestore was created. He does a forced "resuscitation" and removes all unnecessary things from the flash drive by pressing one button, returning it to the "from the store" state:
