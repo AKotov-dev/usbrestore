@@ -2,7 +2,7 @@
 name=usbrestore
 
 [VERSION]
-version=0.2
+version=0.3
 
 [RELEASE]
 release=0.mrx9
@@ -38,7 +38,7 @@ urlcopy=https://github.com/AKotov-dev/usbrestore
 license=GPLv3
 
 [DEPS]
-deps=
+deps=util-linux dosfstools
 
 [META]
 meta=0
@@ -78,8 +78,10 @@ toolversion=2.2.0
 [INFO]
 0=To bring the USB flash drive to normal, factory parameters, USBRestore was created. He does a forced "resuscitation" and removes all unnecessary things from the flash drive by pressing one button:
 1=
-2=v0.2
-3=+ correction of log output
-4=+ cosmetic edits
-5=
-6=v0.1 - initial release
+2=v0.3 + Packages Dependencies: util-linux dosfstools
+3=
+4=v0.2
+5=+ correction of log output
+6=+ cosmetic edits
+7=
+8=v0.1 - initial release

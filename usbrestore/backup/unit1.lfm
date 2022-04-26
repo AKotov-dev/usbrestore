@@ -1,12 +1,12 @@
 object MainForm: TMainForm
   Left = 314
-  Height = 575
+  Height = 615
   Top = 125
-  Width = 815
+  Width = 844
   ActiveControl = DevBox
   Caption = 'USBRestore'
-  ClientHeight = 575
-  ClientWidth = 815
+  ClientHeight = 615
+  ClientWidth = 844
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
@@ -44,17 +44,14 @@ object MainForm: TMainForm
     AnchorSideTop.Control = ProgressBar1
     AnchorSideTop.Side = asrBottom
     Left = 0
-    Height = 485
+    Height = 525
     Top = 73
-    Width = 815
+    Width = 844
     Align = alBottom
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Top = 2
     Font.Height = -13
     Font.Name = 'Monospace'
-    Lines.Strings = (
-      ''
-    )
     ParentFont = False
     ReadOnly = True
     ScrollBars = ssVertical
@@ -68,7 +65,7 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = StopBtn
     AnchorSideBottom.Side = asrBottom
-    Left = 720
+    Left = 749
     Height = 36
     Top = 15
     Width = 90
@@ -119,7 +116,7 @@ object MainForm: TMainForm
     AnchorSideRight.Control = StartBtn
     AnchorSideBottom.Control = ReloadBtn
     AnchorSideBottom.Side = asrBottom
-    Left = 630
+    Left = 659
     Height = 36
     Top = 15
     Width = 90
@@ -173,7 +170,7 @@ object MainForm: TMainForm
     Left = 0
     Height = 10
     Top = 61
-    Width = 815
+    Width = 844
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 10
     TabOrder = 3
@@ -198,8 +195,8 @@ object MainForm: TMainForm
   object StaticText2: TStaticText
     Left = 0
     Height = 17
-    Top = 558
-    Width = 815
+    Top = 598
+    Width = 844
     Align = alBottom
     Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2022   URL: https://linuxforum.ru'
     Color = clDefault
