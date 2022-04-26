@@ -2,7 +2,7 @@
 name=usbrestore
 
 [VERSION]
-version=0.1
+version=0.2
 
 [RELEASE]
 release=0.mrx9
@@ -11,7 +11,7 @@ release=0.mrx9
 group=Applications/System
 
 [DESCRIPTION]
-0=To bring the flash drive to normal, factory parameters, USBRestore was created. He does a forced
+0=To bring the USB flash drive to normal, factory parameters, USBRestore was created. He does a forced
 1=resuscitation and removes all unnecessary things from the flash drive by pressing one button:
 2=
 3=1. Clears the partition table
@@ -29,7 +29,7 @@ maintainer=Alex Kotov
 vendor=alex_q_2000 (C) 2022
 
 [SUMMARY]
-summary=Restoring the factory settings of flash drives
+summary=Restoring the factory settings of USB flash drives
 
 [URLCOPY]
 urlcopy=https://github.com/AKotov-dev/usbrestore
@@ -60,20 +60,6 @@ deb=1
 4=/usr/share/icons/usbrestore.png
 5=/usr/share/doc/usbrestore/
 
-[AFTERINSTALL]
-0=#!/bin/bash
-1=#ldconfig
-2=#update-desktop-database -q /usr/share/applications
-3=#update-mime-database /usr/share/mime
-4=#gtk-update-icon-cache -q -f /usr/share/icons/hicolor
-
-[AFTERREMOVE]
-0=#!/bin/bash
-1=#ldconfig
-2=#update-desktop-database -q /usr/share/applications
-3=#update-mime-database /usr/share/mime
-4=#gtk-update-icon-cache -q -f /usr/share/icons/hicolor
-
 [URL32]
 url32=https://github.com/AKotov-dev/usbrestore
 
@@ -90,7 +76,7 @@ devtool=Lazarus
 toolversion=2.2.0
 
 [INFO]
-0=To bring the flash drive to normal, factory parameters, USBRestore was created. He does a forced "resuscitation" and removes all unnecessary things from the flash drive by pressing one button:
+0=To bring the USB flash drive to normal, factory parameters, USBRestore was created. He does a forced "resuscitation" and removes all unnecessary things from the flash drive by pressing one button:
 1=
 2=1. Clears the partition table
 3=2. Marks the dos partition
@@ -98,4 +84,8 @@ toolversion=2.2.0
 5=4. Formats the partition labeled USBDRIVE
 6=5. Checks the section for errors with correction
 7=
-8=v0.1 - initial release
+8=v0.2
+9=+ correction of log output
+10=+ cosmetic edits
+11=
+12=v0.1 - initial release

@@ -49,7 +49,7 @@ msgid " will be destroyed! Continue?"
 msgstr ""
 
 #: unit1.srootprivileges
-msgid "Root privileges are required! Terminate!"
+msgid "Requires root startup! Terminate!"
 msgstr ""
 
 #: unit1.sunderway

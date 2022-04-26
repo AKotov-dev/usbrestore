@@ -56,7 +56,7 @@ begin
       'echo ' + '''' + 'start=2048, type=0B, bootable' + '''' +
       ' | sfdisk $usb && echo -e "\nFormatting the partition ${usb}1 in FAT32..." && ' +
       'mkfs.fat -v -F32 -n "USBDRIVE" ${usb}1 && echo "Checking the partition ${usb}1..." && '
-      + 'fsck.fat -a -w -v ${usb}1 && echo -e "\nThe operation was completed successfully..."');
+      + 'fsck.fat -a -w -v ${usb}1 && sync && echo -e "\nThe operation was completed successfully..."');
 
     ExProcess.Options := [poUsePipes, poStderrToOutPut];
     //, poWaitOnExit (синхронный вывод)

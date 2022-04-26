@@ -53,8 +53,8 @@ msgid " will be destroyed! Continue?"
 msgstr " будут уничтожены! Продолжить?"
 
 #: unit1.srootprivileges
-msgid "Root privileges are required! Terminate!"
-msgstr "Требуются привилегии root! Отмена!"
+msgid "Requires root startup! Terminate!"
+msgstr "Требуется запуск от root! Отмена!"
 
 #: unit1.sunderway
 msgid "The device recovery procedure is underway! Abort?"

@@ -43,7 +43,7 @@ resourcestring
   SDestroyData1 = 'All data on the selected device ';
   SDestroyData2 = ' will be destroyed! Continue?';
   SUnderway = 'The device recovery procedure is underway! Abort?';
-  SRootPrivileges = 'Root privileges are required! Terminate!';
+  SRootPrivileges = 'Requires root startup! Terminate!';
 
 implementation
 

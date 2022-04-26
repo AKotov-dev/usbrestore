@@ -1,11 +1,11 @@
 object MainForm: TMainForm
   Left = 314
-  Height = 575
+  Height = 583
   Top = 125
   Width = 815
   ActiveControl = DevBox
   Caption = 'USBRestore'
-  ClientHeight = 575
+  ClientHeight = 583
   ClientWidth = 815
   OnClose = FormClose
   OnCreate = FormCreate
@@ -44,7 +44,7 @@ object MainForm: TMainForm
     AnchorSideTop.Control = ProgressBar1
     AnchorSideTop.Side = asrBottom
     Left = 0
-    Height = 485
+    Height = 493
     Top = 73
     Width = 815
     Align = alBottom
@@ -198,7 +198,7 @@ object MainForm: TMainForm
   object StaticText2: TStaticText
     Left = 0
     Height = 17
-    Top = 558
+    Top = 566
     Width = 815
     Align = alBottom
     Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2022   URL: https://linuxforum.ru'

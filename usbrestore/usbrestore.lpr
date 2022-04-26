@@ -17,7 +17,7 @@ uses
 
 begin
   RequireDerivedFormResource:=True;
-  Application.Title:='MgaRemix USBRestore-v0.1';
+  Application.Title:='USBRestore-v0.2 (MgaRemix Tools)';
   Application.Scaled:=True;
   Application.Initialize;
   Application.CreateForm(TMainForm, MainForm);
