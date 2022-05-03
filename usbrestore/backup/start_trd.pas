@@ -49,14 +49,14 @@ begin
     //Группа команд
     ExProcess.Parameters.Add('usb=' + Copy(MainForm.DevBox.Text, 1, 8) +
       '; umount -l $usb ${usb}1 ${usb}2 ${usb}3 ${usb}4 2>/dev/null;' +
-      'echo "Clearing the partition table..." && dd if=/dev/zero of=$usb count=512 && sync && '
-      + 'echo -e "\nCreating a dos partition label..." &&  echo ' +
+      'echo "Clearing the partition table..." && wipefs --all $usb && sync && ' +
+      'echo -e "\nCreating a dos partition label..." &&  echo ' +
       '''' + 'label: dos' + '''' +
       ' | sfdisk $usb && echo -e "\nCreating a FAT32 partition..." && ' +
       'echo ' + '''' + 'start=2048, type=0B, bootable' + '''' +
       ' | sfdisk $usb && echo -e "\nFormatting the partition ${usb}1 in FAT32..." && ' +
-      'mkfs.fat -v -F32 -n "USBDRIVE" ${usb}1 && echo "Checking the partition ${usb}1..." && '
-      + 'fsck.fat -a -w -v ${usb}1 && sync && echo -e "\nThe operation was completed successfully..."');
+      'mkfs.fat -v -F32 -n "USBDRIVE" ${usb}1 && echo -e "\nChecking the partition ${usb}1..." && '
+      + 'fsck.fat -a -w -v ${usb}1 && sync && echo -e "\nThe operation was completed successfully..."; echo ""');
 
     ExProcess.Options := [poUsePipes, poStderrToOutPut];
     //, poWaitOnExit (синхронный вывод)
