@@ -38,7 +38,7 @@ urlcopy=https://github.com/AKotov-dev/usbrestore
 license=GPLv3
 
 [DEPS]
-deps=parted dosfstools
+deps=util-linux parted dosfstools
 
 [META]
 meta=0
@@ -79,17 +79,18 @@ toolversion=2.2.0
 0=To bring the USB flash drive to normal, factory parameters, USBRestore was created. He does a forced "resuscitation" and removes all unnecessary things from the flash drive by pressing one button:
 1=
 2=v0.5
-3=+ switching to parted
-4=+ final release
-5=
-6=v0.4
-7=+ clearing the partition table: using wipefs instead of dd
-8=
-9=v0.3
-10=+ dependencies: util-linux dosfstools
-11=
-12=v0.2
-13=+ correction of log output
-14=+ cosmetic edits
-15=
-16=v0.1 - initial release
+3=+ dependencies: util-linux parted dosfstools
+4=+ switching to parted
+5=+ final release
+6=
+7=v0.4
+8=+ clearing the partition table: using wipefs instead of dd
+9=
+10=v0.3
+11=+ dependencies: util-linux dosfstools
+12=
+13=v0.2
+14=+ correction of log output
+15=+ cosmetic edits
+16=
+17=v0.1 - initial release
