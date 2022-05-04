@@ -43,20 +43,23 @@ begin
     //Рабочий процесс
     ExProcess := TProcess.Create(nil);
 
-    //Создаём раздел ${usb}1 (0B - W95 FAT32) (0C - W95 FAT32 LBA)
+    //Создаём раздел ${usb}1
     ExProcess.Executable := 'bash';
     ExProcess.Parameters.Add('-c');
-    //Группа команд
+    //Группа команд (parted)
     ExProcess.Parameters.Add('usb=' + Copy(MainForm.DevBox.Text, 1, 8) +
-      '; umount -l $usb ${usb}1 ${usb}2 ${usb}3 ${usb}4 2>/dev/null;' +
-      'echo "Clearing the partition table..." && wipefs --all $usb && sync && ' +
-      'echo -e "\nCreating a dos partition label..." &&  echo ' +
-      '''' + 'label: dos' + '''' +
-      ' | sfdisk $usb && echo -e "\nCreating a FAT32 partition..." && ' +
-      'echo ' + '''' + 'start=2048, type=0B, bootable' + '''' +
-      ' | sfdisk $usb && echo -e "\nFormatting the partition ${usb}1 in FAT32..." && ' +
-      'mkfs.fat -v -F32 -n "USBDRIVE" ${usb}1 && echo -e "\nChecking the partition ${usb}1..." && '
-      + 'fsck.fat -a -w -v ${usb}1 && sync && echo -e "\nThe operation was completed successfully...\n"');
+      '; umount -l $usb ${usb}1 ${usb}2 ${usb}3 ${usb}4 2>/dev/null; ' +
+      'echo -e "Creating a dos partition label..." && ' +
+      'wipefs -a $usb && parted -s $usb mklabel msdos && ' +
+      'echo -e "\nCreating a FAT32 partition..." && ' +
+      'parted -s $usb mkpart primary fat32 1MiB 100% && ' +
+      'parted -s $usb set 1 boot on && ' +
+      'echo -e "\nFormatting the partition ${usb}1..." && ' +
+      'mkfs.fat -v -F32 -n "USBDRIVE" ${usb}1 && ' +
+      'echo -e "\nChecking the partition ${usb}1..." && ' +
+      'fsck.fat -a -w -v ${usb}1 && sync && ' +
+      'echo -e "\nResult for $usb..." && parted -s $usb print && ' +
+      'echo -e "The operation was completed successfully...\n"');
 
     ExProcess.Options := [poUsePipes, poStderrToOutPut];
     //, poWaitOnExit (синхронный вывод)
