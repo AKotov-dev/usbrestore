@@ -100,7 +100,7 @@ begin
     ExProcess.Executable := 'bash';
     ExProcess.Parameters.Add('-c');
     ExProcess.Parameters.Add(
-      'killall dd sfdisk mkfs mkfs.fat fsck fsck.fat');
+      'killall wipefs parted mkfs mkfs.fat fsck fsck.fat');
     //  ExProcess.Options := ExProcess.Options + [poWaitOnExit];
     ExProcess.Execute;
   finally

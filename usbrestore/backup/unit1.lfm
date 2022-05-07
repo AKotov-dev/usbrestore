@@ -3,7 +3,6 @@ object MainForm: TMainForm
   Height = 615
   Top = 125
   Width = 844
-  ActiveControl = DevBox
   Caption = 'USBRestore'
   ClientHeight = 615
   ClientWidth = 844
