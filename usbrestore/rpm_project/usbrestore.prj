@@ -2,7 +2,7 @@
 name=usbrestore
 
 [VERSION]
-version=0.5
+version=0.6
 
 [RELEASE]
 release=0.mrx9
@@ -78,19 +78,23 @@ toolversion=2.2.0
 [INFO]
 0=To bring the USB flash drive to normal, factory parameters, USBRestore was created. He does a forced "resuscitation" and removes all unnecessary things from the flash drive by pressing one button:
 1=
-2=v0.5
-3=+ dependencies: util-linux parted dosfstools
-4=+ switching to parted
-5=+ final release
-6=
-7=v0.4
-8=+ clearing the partition table: using wipefs instead of dd
-9=
-10=v0.3
-11=+ dependencies: util-linux dosfstools
-12=
-13=v0.2
-14=+ correction of log output
-15=+ cosmetic edits
+2=v0.6
+3=+ double cancellation of all operations
+4=+ improved overall response and appearance
+5=
+6=v0.5
+7=+ dependencies: util-linux parted dosfstools
+8=+ switching to parted
+9=+ final release
+10=
+11=v0.4
+12=+ clearing the partition table: using wipefs instead of dd
+13=
+14=v0.3
+15=+ dependencies: util-linux dosfstools
 16=
-17=v0.1 - initial release
+17=v0.2
+18=+ correction of log output
+19=+ cosmetic edits
+20=
+21=v0.1 - initial release

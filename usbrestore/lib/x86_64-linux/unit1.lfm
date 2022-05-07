@@ -208,7 +208,7 @@ object MainForm: TMainForm
   end
   object IniPropStorage1: TIniPropStorage
     StoredValues = <>
-    Left = 672
+    Left = 744
     Top = 96
   end
 end

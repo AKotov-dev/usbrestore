@@ -42,7 +42,6 @@ var
 resourcestring
   SDestroyData1 = 'All data on the selected device ';
   SDestroyData2 = ' will be destroyed! Continue?';
-  SUnderway = 'The device recovery procedure is underway! Abort?';
   SRootPrivileges = 'Requires root startup! Terminate!';
 
 implementation
@@ -100,7 +99,7 @@ begin
     ExProcess.Executable := 'bash';
     ExProcess.Parameters.Add('-c');
     ExProcess.Parameters.Add(
-      'killall dd sfdisk mkfs mkfs.fat fsck fsck.fat');
+      'for ((i=1;i<2;i++)); do killall wipefs parted mkfs mkfs.fat fsck fsck.fat; sleep 1; done');
     //  ExProcess.Options := ExProcess.Options + [poWaitOnExit];
     ExProcess.Execute;
   finally
@@ -124,11 +123,7 @@ end;
 //Останов всех операций
 procedure TMainForm.StopBtnClick(Sender: TObject);
 begin
-  Application.ProcessMessages;
-
-  if ProgressBar1.Style = pbstMarquee then
-    if MessageDlg(SUnderway, mtConfirmation, [mbYes, mbNo], 0) = mrYes then
-      KillAll;
+  KillAll;
 end;
 
 procedure TMainForm.FormShow(Sender: TObject);

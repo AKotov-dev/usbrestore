@@ -59,7 +59,7 @@ begin
       'echo -e "\nChecking the partition ${usb}1..." && ' +
       'fsck.fat -a -w -v ${usb}1 && sync && ' +
       'echo -e "\nResult for $usb..." && parted -s $usb print && ' +
-      'echo -e "\nThe operation was completed successfully...\n"');
+      'echo -e "The operation was completed successfully...\n"');
 
     ExProcess.Options := [poUsePipes, poStderrToOutPut];
     //, poWaitOnExit (синхронный вывод)
@@ -95,6 +95,7 @@ begin
     Application.ProcessMessages;
     ProgressBar1.Style := pbstMarquee;
     ProgressBar1.Refresh;
+    DevBox.Enabled := False;
     StartBtn.Enabled := False;
   end;
 end;
@@ -107,6 +108,7 @@ begin
     Application.ProcessMessages;
     ProgressBar1.Style := pbstNormal;
     ProgressBar1.Refresh;
+    DevBox.Enabled := True;
     StartBtn.Enabled := True;
   end;
 end;

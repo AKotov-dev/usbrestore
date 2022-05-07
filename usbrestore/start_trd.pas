@@ -95,6 +95,8 @@ begin
     Application.ProcessMessages;
     ProgressBar1.Style := pbstMarquee;
     ProgressBar1.Refresh;
+    DevBox.Enabled := False;
+    ReloadBtn.Enabled := False;
     StartBtn.Enabled := False;
   end;
 end;
@@ -107,6 +109,8 @@ begin
     Application.ProcessMessages;
     ProgressBar1.Style := pbstNormal;
     ProgressBar1.Refresh;
+    DevBox.Enabled := True;
+    ReloadBtn.Enabled := True;
     StartBtn.Enabled := True;
   end;
 end;

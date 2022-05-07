@@ -20,6 +20,7 @@ object MainForm: TMainForm
     BorderSpacing.Left = 5
     ItemHeight = 0
     ReadOnly = True
+    Style = csDropDownList
     TabOrder = 0
   end
   object ReloadBtn: TSpeedButton
@@ -208,7 +209,7 @@ object MainForm: TMainForm
   end
   object IniPropStorage1: TIniPropStorage
     StoredValues = <>
-    Left = 672
+    Left = 744
     Top = 96
   end
 end

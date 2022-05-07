@@ -56,6 +56,3 @@ msgstr " будут уничтожены! Продолжить?"
 msgid "Requires root startup! Terminate!"
 msgstr "Требуется запуск от root! Отмена!"
 
-#: unit1.sunderway
-msgid "The device recovery procedure is underway! Abort?"
-msgstr "Запущена процедура восстановления! Отменить?"
