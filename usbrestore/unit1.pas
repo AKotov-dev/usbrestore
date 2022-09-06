@@ -63,7 +63,7 @@ begin
     ExProcess.Executable := 'bash';
     ExProcess.Parameters.Add('-c');
     ExProcess.Parameters.Add(
-      '>~/.usbrestore/devlist; dev=$(lsblk -ld | cut -f1 -d" " | tail -n +2);' +
+      '>~/.usbrestore/devlist; dev=$(lsblk -ldnA | cut -f1 -d" ");' +
       'for i in $dev; do if [[ $(cat /sys/block/$i/removable) -eq 1 ]]; then ' +
       'echo "/dev/$(lsblk -ld | grep $i | awk ' + '''' + '{print $1,$4}' +
       '''' + ')" >> ~/.usbrestore/devlist; fi; done');

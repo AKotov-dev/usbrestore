@@ -2,7 +2,7 @@
 name=usbrestore
 
 [VERSION]
-version=0.6
+version=0.7
 
 [RELEASE]
 release=0.mrx9
@@ -38,7 +38,7 @@ urlcopy=https://github.com/AKotov-dev/usbrestore
 license=GPLv3
 
 [DEPS]
-deps=util-linux parted dosfstools
+deps=util-linux parted dosfstools gtk2 polkit
 
 [META]
 meta=0
@@ -78,23 +78,29 @@ toolversion=2.2.0
 [INFO]
 0=To bring the USB flash drive to normal, factory parameters, USBRestore was created. He does a forced "resuscitation" and removes all unnecessary things from the flash drive by pressing one button:
 1=
-2=v0.6
-3=+ double cancellation of all operations
-4=+ improved overall response and appearance
-5=
-6=v0.5
-7=+ dependencies: util-linux parted dosfstools
-8=+ switching to parted
-9=+ final release
-10=
-11=v0.4
-12=+ clearing the partition table: using wipefs instead of dd
-13=
-14=v0.3
-15=+ dependencies: util-linux dosfstools
+2=v0.7
+3=+ Release for Mageia-9 and higher
+4=+ lsblk v2.38 (added the -A option)
+5=+ Added gtk2, polkit dependency
+6=+ Plasma: LCL Scaling (Hi-DPI) and selective launch via kdesu
+7=
+8=v0.6
+9=+ double cancellation of all operations
+10=+ improved overall response and appearance
+11=
+12=v0.5
+13=+ dependencies: util-linux parted dosfstools
+14=+ switching to parted
+15=+ final release
 16=
-17=v0.2
-18=+ correction of log output
-19=+ cosmetic edits
-20=
-21=v0.1 - initial release
+17=v0.4
+18=+ clearing the partition table: using wipefs instead of dd
+19=
+20=v0.3
+21=+ dependencies: util-linux dosfstools
+22=
+23=v0.2
+24=+ correction of log output
+25=+ cosmetic edits
+26=
+27=v0.1 - initial release

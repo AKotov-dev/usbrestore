@@ -14,13 +14,12 @@ object MainForm: TMainForm
   object DevBox: TComboBox
     AnchorSideLeft.Control = Owner
     Left = 5
-    Height = 36
+    Height = 37
     Top = 15
     Width = 180
     BorderSpacing.Left = 5
     ItemHeight = 0
     ReadOnly = True
-    Style = csDropDownList
     TabOrder = 0
   end
   object ReloadBtn: TSpeedButton
@@ -30,7 +29,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = DevBox
     AnchorSideBottom.Side = asrBottom
     Left = 185
-    Height = 36
+    Height = 37
     Hint = 'Reread'
     Top = 15
     Width = 40
@@ -44,8 +43,8 @@ object MainForm: TMainForm
     AnchorSideTop.Control = ProgressBar1
     AnchorSideTop.Side = asrBottom
     Left = 0
-    Height = 525
-    Top = 73
+    Height = 524
+    Top = 74
     Width = 844
     Align = alBottom
     Anchors = [akTop, akLeft, akRight, akBottom]
@@ -66,7 +65,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = StopBtn
     AnchorSideBottom.Side = asrBottom
     Left = 749
-    Height = 36
+    Height = 37
     Top = 15
     Width = 90
     Anchors = [akTop, akRight, akBottom]
@@ -117,7 +116,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = ReloadBtn
     AnchorSideBottom.Side = asrBottom
     Left = 659
-    Height = 36
+    Height = 37
     Top = 15
     Width = 90
     Anchors = [akTop, akRight, akBottom]
@@ -169,7 +168,7 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     Left = 0
     Height = 10
-    Top = 61
+    Top = 62
     Width = 844
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 10
