@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Buttons,
-  ComCtrls, IniPropStorage, Process, DefaultTranslator;
+  ComCtrls, IniPropStorage, Process, DefaultTranslator, BaseUnix;
 
 type
 
@@ -63,14 +63,14 @@ begin
     ExProcess.Executable := 'bash';
     ExProcess.Parameters.Add('-c');
     ExProcess.Parameters.Add(
-      '>~/.usbrestore/devlist; dev=$(lsblk -ldnA | cut -f1 -d" ");' +
+      '>/root/.usbrestore/devlist; dev=$(lsblk -ldnA | cut -f1 -d" ");' +
       'for i in $dev; do if [[ $(cat /sys/block/$i/removable) -eq 1 ]]; then ' +
       'echo "/dev/$(lsblk -ld | grep $i | awk ' + '''' + '{print $1,$4}' +
-      '''' + ')" >> ~/.usbrestore/devlist; fi; done');
+      '''' + ')" >> /root/.usbrestore/devlist; fi; done');
     ExProcess.Options := ExProcess.Options + [poWaitOnExit];
     ExProcess.Execute;
 
-    DevBox.Items.LoadFromFile(GetUserDir + '.usbrestore/devlist');
+    DevBox.Items.LoadFromFile('/root/.usbrestore/devlist');
 
     if DevBox.Items.Count <> 0 then
     begin
@@ -135,17 +135,18 @@ end;
 
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
-  if GetEnvironmentVariable('USER') <> 'root' then
+  //Требуется su или root
+  if FPGetEUID <> 0 then
   begin
     MessageDlg(SRootPrivileges, mtError, [mbOK], 0);
     Application.Terminate;
   end;
 
   //Создаём рабочий каталог
-  if not DirectoryExists(GetUserDir + '.usbrestore') then
-    MkDir(GetUserDir + '.usbrestore');
+  if not DirectoryExists('/root/.usbrestore') then
+    MkDir('/root/.usbrestore');
 
-  IniPropStorage1.IniFileName := GetUserDir + '.usbrestore/settings';
+  IniPropStorage1.IniFileName := '/root/.usbrestore/settings';
 
   //Показываем флешки
   ReloadBtn.Click;
