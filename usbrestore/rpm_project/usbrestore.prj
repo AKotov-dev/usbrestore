@@ -2,7 +2,7 @@
 name=usbrestore
 
 [VERSION]
-version=0.7
+version=0.8
 
 [RELEASE]
 release=0.mrx9
@@ -78,28 +78,32 @@ toolversion=2.2.0
 [INFO]
 0=To bring the USB flash drive to normal, factory parameters, USBRestore was created. He does a forced "resuscitation" and removes all unnecessary things from the flash drive by pressing one button:
 1=
-2=v0.7
-3=+ Release for Mageia-9 and higher
-4=+ lsblk v2.38 (added the -A option)
-5=+ Plasma: LCL Scaling (Hi-DPI) and selective launch via kdesu
-6=
-7=v0.6
-8=+ double cancellation of all operations
-9=+ improved overall response and appearance
+2=v0.8
+3=+ Improved kdesu/pkexec startup script
+4=+ Release for Mageia-9 and higher
+5=
+6=v0.7
+7=+ Release for Mageia-9 and higher
+8=+ lsblk v2.38 (added the -A option)
+9=+ Plasma: LCL Scaling (Hi-DPI) and selective launch via kdesu
 10=
-11=v0.5
-12=+ dependencies: util-linux parted dosfstools
-13=+ switching to parted
-14=+ final release
-15=
-16=v0.4
-17=+ clearing the partition table: using wipefs instead of dd
-18=
-19=v0.3
-20=+ dependencies: util-linux dosfstools
-21=
-22=v0.2
-23=+ correction of log output
-24=+ cosmetic edits
+11=v0.6
+12=+ double cancellation of all operations
+13=+ improved overall response and appearance
+14=
+15=v0.5
+16=+ dependencies: util-linux parted dosfstools
+17=+ switching to parted
+18=+ final release
+19=
+20=v0.4
+21=+ clearing the partition table: using wipefs instead of dd
+22=
+23=v0.3
+24=+ dependencies: util-linux dosfstools
 25=
-26=v0.1 - initial release
+26=v0.2
+27=+ correction of log output
+28=+ cosmetic edits
+29=
+30=v0.1 - initial release
