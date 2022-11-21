@@ -63,10 +63,13 @@ begin
     ExProcess.Executable := 'bash';
     ExProcess.Parameters.Add('-c');
     ExProcess.Parameters.Add(
-      '>/root/.usbrestore/devlist; dev=$(lsblk -ldnA | cut -f1 -d" ");' +
+    //Проверка версии lsblk для опции -A
+      '[[ $(lsblk --version | cut -f4 -d" " | cut -f1,2 -d".") == "2.37" ]] && a="" || a="A";'
+      +
+      '>/root/.usbrestore/devlist; dev=$(lsblk -ldn$a | cut -f1 -d" ");' +
       'for i in $dev; do if [[ $(cat /sys/block/$i/removable) -eq 1 ]]; then ' +
       'echo "/dev/$(lsblk -ld | grep $i | awk ' + '''' + '{print $1,$4}' +
-      '''' + ')" >> /root/.usbrestore/devlist; fi; done');
+      '''' + ')" | grep -Ev "\/dev\/sr|0B" >> /root/.usbrestore/devlist; fi; done');
     ExProcess.Options := ExProcess.Options + [poWaitOnExit];
     ExProcess.Execute;
 
@@ -144,7 +147,7 @@ begin
 
   //Создаём рабочий каталог
   if not DirectoryExists('/root/.usbrestore') then
-    MkDir(GetUserDir + '/root/.usbrestore');
+    MkDir('/root/.usbrestore');
 
   IniPropStorage1.IniFileName := '/root/.usbrestore/settings';
 
