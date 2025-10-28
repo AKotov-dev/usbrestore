@@ -10,17 +10,17 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms,
-  Unit1,
-  start_trd { you can add units after this };
+  Forms, Unit1, start_trd
+  { you can add units after this };
 
-  {$R *.res}
+{$R *.res}
 
 begin
-  RequireDerivedFormResource := True;
-  Application.Title:='USBRestore-v1.0 (MgaRemix Tools)';
+  RequireDerivedFormResource:=True;
+  Application.Title:='USBRestore-v0.9 (MgaRemix Tools)';
   Application.Scaled:=True;
   Application.Initialize;
   Application.CreateForm(TMainForm, MainForm);
   Application.Run;
 end.
+

@@ -48,9 +48,9 @@ implementation
 
 uses start_trd;
 
-{$R *.lfm}
+  {$R *.lfm}
 
-{ TMainForm }
+  { TMainForm }
 
 //Начитываем removable devices (флешки)
 procedure TMainForm.ReloadUSBDevices;
@@ -62,17 +62,16 @@ begin
   try
     ExProcess.Executable := 'bash';
     ExProcess.Parameters.Add('-c');
+
+    //Спсок флешек в /root/.usbrestore/devlist
     ExProcess.Parameters.Add(
-    //Проверка версии lsblk для опции -A
-      '[[ $(lsblk --version | cut -f4 -d" " | cut -f1,2 -d".") == "2.37" ]] && a="" || a="A";'
-      +
-      '>/root/.usbrestore/devlist; dev=$(lsblk -ldn$a | cut -f1 -d" ");' +
-      'for i in $dev; do if [[ $(cat /sys/block/$i/removable) -eq 1 ]]; then ' +
-      'echo "/dev/$(lsblk -ld | grep $i | awk ' + '''' + '{print $1,$4}' +
-      '''' + ')" | grep -Ev "\/dev\/sr|0B" >> /root/.usbrestore/devlist; fi; done');
+      '> /root/.usbrestore/devlist; lsblk -ldnp -I 8 | awk ' + '''' +
+      '$3 == "1" && $4 != "0B" {print $1, $4}' + '''' + ' > /root/.usbrestore/devlist');
+
     ExProcess.Options := ExProcess.Options + [poWaitOnExit];
     ExProcess.Execute;
 
+    DevBox.Clear;
     DevBox.Items.LoadFromFile('/root/.usbrestore/devlist');
 
     if DevBox.Items.Count <> 0 then
@@ -115,7 +114,7 @@ procedure TMainForm.StartBtnClick(Sender: TObject);
 var
   FStartRestore: TThread;
 begin
-  if MessageDlg(SDestroyData1 + #13#10 + Copy(DevBox.Text, 1, 8) +
+  if MessageDlg(SDestroyData1 + #13#10 + '[ ' + DevBox.Text + ' ]' +
     SDestroyData2, mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
     FStartRestore := StartRestore.Create(False);
@@ -134,6 +133,9 @@ begin
   IniPropStorage1.Restore;
   MainForm.Caption := Application.Title;
   ReloadBtn.Width := ReloadBtn.Height;
+
+  //Показываем флешки
+  ReloadBtn.Click;
 end;
 
 procedure TMainForm.FormCreate(Sender: TObject);
@@ -150,9 +152,6 @@ begin
     MkDir('/root/.usbrestore');
 
   IniPropStorage1.IniFileName := '/root/.usbrestore/settings';
-
-  //Показываем флешки
-  ReloadBtn.Click;
 end;
 
 procedure TMainForm.FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -162,7 +161,6 @@ end;
 
 procedure TMainForm.ReloadBtnClick(Sender: TObject);
 begin
-  DevBox.Clear;
   ReloadUSBDevices;
 end;
 

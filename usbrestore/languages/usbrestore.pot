@@ -33,7 +33,7 @@ msgid "Start"
 msgstr ""
 
 #: tmainform.statictext2.caption
-msgid "License: GPLv3   Author: alex_q_2000 (C) 2022   URL: https://linuxforum.ru"
+msgid "License: GPLv3   Author: alex_q_2000 (C) 2022-2025   https://github.com/AKotov-dev/usbrestore"
 msgstr ""
 
 #: tmainform.stopbtn.caption

@@ -1,16 +1,16 @@
 object MainForm: TMainForm
-  Left = 314
-  Height = 615
+  Left = 316
+  Height = 621
   Top = 125
-  Width = 844
+  Width = 849
   Caption = 'USBRestore'
-  ClientHeight = 615
-  ClientWidth = 844
+  ClientHeight = 621
+  ClientWidth = 849
+  SessionProperties = 'Height;Width;Top;Left'
+  LCLVersion = '4.2.0.0'
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  SessionProperties = 'Height;Width;Top;Left'
-  LCLVersion = '2.2.0.4'
   object DevBox: TComboBox
     AnchorSideLeft.Control = Owner
     Left = 5
@@ -20,7 +20,6 @@ object MainForm: TMainForm
     BorderSpacing.Left = 5
     ItemHeight = 0
     ReadOnly = True
-    Style = csDropDownList
     TabOrder = 0
   end
   object ReloadBtn: TSpeedButton
@@ -36,17 +35,17 @@ object MainForm: TMainForm
     Width = 40
     Anchors = [akTop, akLeft, akBottom]
     Caption = 'R'
-    OnClick = ReloadBtnClick
     ShowHint = True
     ParentShowHint = False
+    OnClick = ReloadBtnClick
   end
   object LogMemo: TMemo
     AnchorSideTop.Control = ProgressBar1
     AnchorSideTop.Side = asrBottom
     Left = 0
-    Height = 524
+    Height = 527
     Top = 74
-    Width = 844
+    Width = 849
     Align = alBottom
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Top = 2
@@ -65,7 +64,7 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = StopBtn
     AnchorSideBottom.Side = asrBottom
-    Left = 749
+    Left = 754
     Height = 37
     Top = 15
     Width = 90
@@ -108,15 +107,15 @@ object MainForm: TMainForm
       00000000000000000000A4C1332DA5BE3191A6BE33D4A6BE32F4A6BE32F4A6BE
       33D4A6BD3290A8BF342C00000000000000000000000000000000
     }
-    OnClick = StartBtnClick
     TabOrder = 2
+    OnClick = StartBtnClick
   end
   object StopBtn: TBitBtn
     AnchorSideTop.Control = ReloadBtn
     AnchorSideRight.Control = StartBtn
     AnchorSideBottom.Control = ReloadBtn
     AnchorSideBottom.Side = asrBottom
-    Left = 659
+    Left = 664
     Height = 37
     Top = 15
     Width = 90
@@ -158,8 +157,8 @@ object MainForm: TMainForm
       FF00FFFFFF00FFFFFF004A4AEB264A48E7804949E8B34948E8E64948E8E64949
       E8B34A48E7804A4AEB26FFFFFF00FFFFFF00FFFFFF00FFFFFF00
     }
-    OnClick = StopBtnClick
     TabOrder = 1
+    OnClick = StopBtnClick
   end
   object ProgressBar1: TProgressBar
     AnchorSideLeft.Control = Owner
@@ -170,7 +169,7 @@ object MainForm: TMainForm
     Left = 0
     Height = 10
     Top = 62
-    Width = 844
+    Width = 849
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 10
     TabOrder = 3
@@ -194,11 +193,11 @@ object MainForm: TMainForm
   end
   object StaticText2: TStaticText
     Left = 0
-    Height = 17
-    Top = 598
-    Width = 844
+    Height = 20
+    Top = 601
+    Width = 849
     Align = alBottom
-    Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2022   URL: https://linuxforum.ru'
+    Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2022-2025   https://github.com/AKotov-dev/usbrestore'
     Color = clDefault
     Font.Color = clGray
     Font.Height = -11

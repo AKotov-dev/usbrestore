@@ -10,17 +10,15 @@ uses
 type
   StartRestore = class(TThread)
   private
-
-    { Private declarations }
-  protected
-  var
-    Result: TStringList;
-
-    procedure Execute; override;
+    // Строка для передачи в ShowTempLine через Synchronize
+    FTempLine: string;
 
     procedure ShowLog;
     procedure StartProgress;
     procedure StopProgress;
+
+  protected
+    procedure Execute; override;
 
   end;
 
@@ -28,18 +26,23 @@ implementation
 
 uses Unit1;
 
-{ TRD }
+  { TRD }
 
 procedure StartRestore.Execute;
 var
   ExProcess: TProcess;
+  Buf: array[0..1023] of ansichar;
+  Len: longint;
+  Acc: ansistring;
+  LinePos: integer;
+  S: string;
 begin
+  FreeOnTerminate := True; //Уничтожить по завершении
+  Synchronize(@StartProgress);
+
+  Acc := '';
+
   try //Вывод лога и прогресса
-    Synchronize(@StartProgress);
-
-    FreeOnTerminate := True; //Уничтожить по завершении
-    Result := TStringList.Create;
-
     //Рабочий процесс
     ExProcess := TProcess.Create(nil);
 
@@ -59,28 +62,48 @@ begin
       'echo -e "\nChecking the partition ${usb}1..." && ' +
       'fsck.fat -a -w -v ${usb}1 && sync && ' +
       'echo -e "\nResult for $usb..." && parted -s $usb print && ' +
-      'echo -e "The operation was completed successfully...\n"');
+      'echo "The operation was completed successfully..."');
 
     ExProcess.Options := [poUsePipes, poStderrToOutPut];
-    //, poWaitOnExit (синхронный вывод)
+    // , poWaitOnExit (синхронный вывод)
+
 
     ExProcess.Execute;
 
-    //Выводим лог динамически
-    while ExProcess.Running do
+    while ExProcess.Running or (ExProcess.Output.NumBytesAvailable > 0) do
     begin
-      Result.LoadFromStream(ExProcess.Output);
+      Len := ExProcess.Output.NumBytesAvailable;
+      if Len > 0 then
+      begin
+        if Len > SizeOf(Buf) then Len := SizeOf(Buf);
+        ExProcess.Output.Read(Buf, Len);
+        Acc := Acc + Copy(Buf, 0, Len);
+        // аккумулируем байты в строку
 
-      //Выводим лог
-      if Result.Count <> 0 then
-        Synchronize(@ShowLog);
+        // Разбиваем на строки по LineEnding
+        LinePos := Pos(LineEnding, string(Acc));
+        while LinePos > 0 do
+        begin
+          S := Copy(Acc, 1, LinePos - 1);
+          FTempLine := S;
+          Synchronize(@ShowLog); // добавляем строку в Memo
+          Delete(Acc, 1, LinePos + Length(LineEnding) - 1);
+          LinePos := Pos(LineEnding, string(Acc));
+        end;
+      end;
+      Sleep(10);
+    end;
+
+    // Вывод остатка
+    if Acc <> '' then
+    begin
+      FTempLine := string(Acc);
+      Synchronize(@ShowLog);
     end;
 
   finally
-    Synchronize(@StopProgress);
-    Result.Free;
     ExProcess.Free;
-    Terminate;
+    Synchronize(@StopProgress);
   end;
 end;
 
@@ -89,45 +112,47 @@ end;
 //Старт индикатора
 procedure StartRestore.StartProgress;
 begin
-  with MainForm do
-  begin
-    LogMemo.Clear;
-    Application.ProcessMessages;
-    ProgressBar1.Style := pbstMarquee;
-    ProgressBar1.Refresh;
-    DevBox.Enabled := False;
-    StartBtn.Enabled := False;
-  end;
+  if Assigned(MainForm) then
+    with MainForm do
+    begin
+      LogMemo.Clear;
+      Application.ProcessMessages;
+      ProgressBar1.Style := pbstMarquee;
+      ProgressBar1.Refresh;
+      DevBox.Enabled := False;
+      ReloadBtn.Enabled := False;
+      StartBtn.Enabled := False;
+    end;
 end;
 
 //Стоп индикатора
 procedure StartRestore.StopProgress;
 begin
-  with MainForm do
-  begin
-    Application.ProcessMessages;
-    ProgressBar1.Style := pbstNormal;
-    ProgressBar1.Refresh;
-    DevBox.Enabled := True;
-    StartBtn.Enabled := True;
-  end;
+  if Assigned(MainForm) then
+    with MainForm do
+    begin
+      Application.ProcessMessages;
+      ProgressBar1.Style := pbstNormal;
+      ProgressBar1.Refresh;
+      DevBox.Enabled := True;
+      ReloadBtn.Enabled := True;
+      StartBtn.Enabled := True;
+    end;
 end;
 
 //Вывод лога
 procedure StartRestore.ShowLog;
-var
-  i: integer;
 begin
   //Вывод построчно
-  for i := 0 to Result.Count - 1 do
-    MainForm.LogMemo.Lines.Append(Result[i]);
+  if Assigned(MainForm) then
+    with MainForm do
+    begin
+      LogMemo.Lines.Append(FTempLine);
 
-  //Промотать список вниз
-  MainForm.LogMemo.SelStart := Length(MainForm.LogMemo.Text);
-  MainForm.LogMemo.SelLength := 0;
-
-  //Вывод пачками
-  //MainForm.LogMemo.Lines.Assign(Result);
+      //Промотать список вниз
+      LogMemo.SelStart := Length(MainForm.LogMemo.Text);
+      LogMemo.SelLength := 0;
+    end;
 end;
 
 end.
