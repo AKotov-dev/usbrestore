@@ -43,12 +43,12 @@ begin
   Acc := '';
 
   try //Вывод лога и прогресса
-    //Рабочий процесс
     ExProcess := TProcess.Create(nil);
 
     //Создаём раздел ${usb}1
     ExProcess.Executable := 'bash';
     ExProcess.Parameters.Add('-c');
+
     //Группа команд (parted)
     ExProcess.Parameters.Add('usb=' + Copy(MainForm.DevBox.Text, 1, 8) +
       '; umount -l $usb ${usb}1 ${usb}2 ${usb}3 ${usb}4 2>/dev/null; ' +

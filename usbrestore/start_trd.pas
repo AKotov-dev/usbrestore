@@ -10,7 +10,7 @@ uses
 type
   StartRestore = class(TThread)
   private
-    // Строка для передачи в ShowTempLine через Synchronize
+    // Строка для передачи в ShowLog через Synchronize
     FTempLine: string;
 
     procedure ShowLog;
@@ -45,7 +45,6 @@ begin
   try //Вывод лога и прогресса
     ExProcess := TProcess.Create(nil);
 
-    //Создаём раздел ${usb}1
     ExProcess.Executable := 'bash';
     ExProcess.Parameters.Add('-c');
 
