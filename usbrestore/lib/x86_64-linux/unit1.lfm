@@ -197,7 +197,7 @@ object MainForm: TMainForm
     Top = 601
     Width = 849
     Align = alBottom
-    Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2022-2025   https://github.com/AKotov-dev/usbrestore'
+    Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2026   https://github.com/AKotov-dev/usbrestore'
     Color = clDefault
     Font.Color = clGray
     Font.Height = -11

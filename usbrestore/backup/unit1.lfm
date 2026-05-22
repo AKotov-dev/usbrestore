@@ -182,9 +182,9 @@ object MainForm: TMainForm
     Left = 235
     Height = 34
     Top = 16
-    Width = 349
+    Width = 400
     BorderSpacing.Left = 10
-    Caption = 'Attention! The factory dos partition and the FAT32 file'#10'system will be restored on the selected device!'
+    Caption = 'Attention! The factory dos partition and the FAT32 / exFAT file'#10'system will be restored on the selected device!'
     Font.Color = clRed
     Font.Height = -13
     Font.Name = 'Sans'
