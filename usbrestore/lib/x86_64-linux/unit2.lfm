@@ -1,10 +1,10 @@
 object SelectForm: TSelectForm
   Left = 331
-  Height = 228
-  Top = 141
+  Height = 208
+  Top = 140
   Width = 470
   Caption = 'File system selection'
-  ClientHeight = 228
+  ClientHeight = 208
   ClientWidth = 470
   LCLVersion = '4.6.0.0'
   object RadioGroup1: TRadioGroup
@@ -51,8 +51,8 @@ object SelectForm: TSelectForm
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Left = 337
-    Height = 38
-    Top = 180
+    Height = 37
+    Top = 161
     Width = 125
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 8
@@ -70,8 +70,8 @@ object SelectForm: TSelectForm
     AnchorSideBottom.Control = StartBtn
     AnchorSideBottom.Side = asrBottom
     Left = 208
-    Height = 38
-    Top = 180
+    Height = 37
+    Top = 161
     Width = 125
     Anchors = [akTop, akRight, akBottom]
     BorderSpacing.Right = 4

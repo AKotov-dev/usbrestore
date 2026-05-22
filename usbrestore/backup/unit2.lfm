@@ -1,7 +1,7 @@
 object SelectForm: TSelectForm
-  Left = 324
+  Left = 331
   Height = 228
-  Top = 124
+  Top = 141
   Width = 470
   Caption = 'File system selection'
   ClientHeight = 228
