@@ -1,7 +1,7 @@
 # USBRestore
 **Restoring the factory settings of USB flash drives**
 
-**Dependencies:** util-linux parted dosfstools gtk2 (libgtk2.0-0 for Ubuntu)
+**Dependencies:** util-linux parted dosfstools exfatprogs gtk2 (libgtk2.0-0 for Ubuntu)
 
 If earlier ISO installation images were recorded on the USB flash drive, for example, through Rufus programs (GPT/EFI/Windows), or the GRUB bootloader was installed, there may be problems with the USB flash drive in the future: all of the above is not deleted even after formatting. Therefore, the flash drive may not load in televisions, set-top boxes, etc. All these devices, like the MgaRemix bootloader, require the use of native/factory flash drive parameters: dos partition, FAT32 file system.
 
@@ -9,7 +9,7 @@ To bring the flash drive to normal, factory parameters, a USBRestore was created
 
 1. Clears the partition table
 2. Marks the dos partition
-3. Creates a FAT32 partition
+3. Creates a FAT32 /exFAT partition
 4. Formats the partition labeled USBDRIVE
 5. Checks the section for errors with correction
 
