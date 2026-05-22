@@ -9,7 +9,7 @@ To bring the flash drive to normal, factory parameters, a USBRestore was created
 
 1. Clears the partition table
 2. Marks the dos partition
-3. Creates a FAT32 /exFAT partition
+3. Creates a FAT32 / exFAT partition
 4. Formats the partition labeled USBDRIVE
 5. Checks the section for errors with correction
 
