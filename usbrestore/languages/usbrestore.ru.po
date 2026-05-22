@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.8\n"
 
 #: tmainform.caption
 msgid "USBRestore"
@@ -18,11 +18,11 @@ msgstr ""
 
 #: tmainform.label1.caption
 msgid ""
-"Attention! The factory dos partition and the FAT32 file\n"
+"Attention! The factory dos partition and the FAT32 / exFAT file\n"
 "system will be restored on the selected device!"
 msgstr ""
 "Внимание! На выбранном устройстве будут восстановлены\n"
-"заводской раздел dos и файловая система FAT32!"
+"заводской раздел dos и файловая система FAT32 / exFAT!"
 
 #: tmainform.reloadbtn.caption
 msgid "R"

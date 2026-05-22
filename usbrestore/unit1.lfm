@@ -1,13 +1,13 @@
 object MainForm: TMainForm
-  Left = 316
+  Left = 324
   Height = 621
-  Top = 125
+  Top = 123
   Width = 849
   Caption = 'USBRestore'
   ClientHeight = 621
   ClientWidth = 849
   SessionProperties = 'Height;Width;Top;Left'
-  LCLVersion = '4.2.0.0'
+  LCLVersion = '4.6.0.0'
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
@@ -182,9 +182,9 @@ object MainForm: TMainForm
     Left = 235
     Height = 34
     Top = 16
-    Width = 349
+    Width = 400
     BorderSpacing.Left = 10
-    Caption = 'Attention! The factory dos partition and the FAT32 file'#10'system will be restored on the selected device!'
+    Caption = 'Attention! The factory dos partition and the FAT32 / exFAT file'#10'system will be restored on the selected device!'
     Font.Color = clRed
     Font.Height = -13
     Font.Name = 'Sans'

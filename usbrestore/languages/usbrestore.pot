@@ -16,7 +16,7 @@ msgstr ""
 
 #: tmainform.label1.caption
 msgid ""
-"Attention! The factory dos partition and the FAT32 file\n"
+"Attention! The factory dos partition and the FAT32 / exFAT file\n"
 "system will be restored on the selected device!"
 msgstr ""
 

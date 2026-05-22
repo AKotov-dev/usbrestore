@@ -134,7 +134,7 @@ begin
   MainForm.Caption := Application.Title;
   ReloadBtn.Width := ReloadBtn.Height;
 
-  //Показываем флешки
+  //Начитываем флешки
   ReloadBtn.Click;
 end;
 

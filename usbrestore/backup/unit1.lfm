@@ -1,13 +1,13 @@
 object MainForm: TMainForm
-  Left = 316
+  Left = 324
   Height = 621
-  Top = 125
+  Top = 123
   Width = 849
   Caption = 'USBRestore'
   ClientHeight = 621
   ClientWidth = 849
   SessionProperties = 'Height;Width;Top;Left'
-  LCLVersion = '4.2.0.0'
+  LCLVersion = '4.6.0.0'
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow

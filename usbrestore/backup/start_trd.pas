@@ -10,7 +10,7 @@ uses
 type
   StartRestore = class(TThread)
   private
-    // Строка для передачи в ShowTempLine через Synchronize
+    // Строка для передачи в ShowLog через Synchronize
     FTempLine: string;
 
     procedure ShowLog;
@@ -45,12 +45,11 @@ begin
   try //Вывод лога и прогресса
     ExProcess := TProcess.Create(nil);
 
-    //Создаём раздел ${usb}1
     ExProcess.Executable := 'bash';
     ExProcess.Parameters.Add('-c');
 
-    //Группа команд (parted)
-    ExProcess.Parameters.Add('usb=' + Copy(MainForm.DevBox.Text, 1, 8) +
+    //Группа команд (FAT32)
+  {  ExProcess.Parameters.Add('usb=' + Copy(MainForm.DevBox.Text, 1, 8) +
       '; umount -l $usb ${usb}1 ${usb}2 ${usb}3 ${usb}4 2>/dev/null; ' +
       'echo -e "Creating a dos partition label..." && ' +
       'wipefs -a $usb && parted -s $usb mklabel msdos && ' +
@@ -61,6 +60,20 @@ begin
       'mkfs.fat -v -F32 -n "USBDRIVE" ${usb}1 && ' +
       'echo -e "\nChecking the partition ${usb}1..." && ' +
       'fsck.fat -a -w -v ${usb}1 && sync && ' +
+      'echo -e "\nResult for $usb..." && parted -s $usb print && ' +
+      'echo "The operation was completed successfully..."');}
+
+    //Группа команд (FAT32)
+    ExProcess.Parameters.Add('usb=' + Copy(MainForm.DevBox.Text, 1, 8) +
+      '; umount -l $usb ${usb}1 ${usb}2 ${usb}3 ${usb}4 2>/dev/null; ' +
+      'echo -e "Creating a dos partition label..." && ' +
+      'wipefs -a $usb && parted -s $usb mklabel msdos && ' +
+      'echo -e "\nCreating an exFAT partition..." && ' +
+      'parted -s $usb mkpart primary 1MiB 100% && ' +
+      'echo -e "\nFormatting the partition ${usb}1..." && ' +
+      'mkfs.exfat -n "USBDRIVE" ${usb}1 && ' +
+      'echo -e "\nChecking the partition ${usb}1..." && ' +
+      'fsck.exfat -p ${usb}1 && sync && ' +
       'echo -e "\nResult for $usb..." && parted -s $usb print && ' +
       'echo "The operation was completed successfully..."');
 

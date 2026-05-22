@@ -2,10 +2,10 @@
 name=usbrestore
 
 [VERSION]
-version=1.0
+version=1.1
 
 [RELEASE]
-release=0.mrx9
+release=0.mrx10
 
 [GROUP]
 group=Accessibility
@@ -16,7 +16,7 @@ group=Accessibility
 2=
 3=1. Clears the partition table
 4=2. Marks the dos partition
-5=3. Creates a FAT32 partition
+5=3. Creates a FAT32 / exFAT partition
 6=4. Formats the partition labeled USBDRIVE
 7=5. Checks the section for errors with correction
 8=---
@@ -26,7 +26,7 @@ group=Accessibility
 maintainer=Alex Kotov
 
 [VENDOR]
-vendor=alex_q_2000 (C) 2022-2025
+vendor=alex_q_2000 (C) 2026
 
 [SUMMARY]
 summary=Restoring the factory settings of USB flash drives
@@ -38,7 +38,7 @@ urlcopy=https://github.com/AKotov-dev/usbrestore
 license=GPLv3
 
 [DEPS]
-deps=util-linux parted dosfstools gtk2
+deps=util-linux parted dosfstools exfatprogs gtk2
 
 [META]
 meta=0
@@ -50,12 +50,12 @@ noarch=0
 deb=0
 
 [FILES]
-0=/usr/share/usbrestore/
-1=/usr/share/doc/usbrestore/
-2=/usr/bin/usbrestore
-3=/usr/share/icons/usbrestore.png
-4=/usr/share/polkit-1/actions/usbrestore.policy
-5=/usr/share/applications/usbrestore.desktop
+0=/usr/bin/usbrestore
+1=/usr/share/icons/usbrestore.png
+2=/usr/share/polkit-1/actions/usbrestore.policy
+3=/usr/share/applications/usbrestore.desktop
+4=/usr/share/usbrestore/
+5=/usr/share/doc/usbrestore/
 
 [URL32]
 url32=https://github.com/AKotov-dev/usbrestore
@@ -67,46 +67,51 @@ programname=USBRestore
 devtool=Lazarus
 
 [TOOLVERSION]
-toolversion=4.2
+toolversion=4.6
 
 [INFO]
 0=To bring the USB flash drive to normal, factory parameters, USBRestore was created. He does a forced "resuscitation" and removes all unnecessary things from the flash drive by pressing one button:
 1=
-2=v1.0
-3=+ The flash drive search procedure has been improved
-4=+ The current operation log output has been improved
+2=v1.1
+3=+ Build in Lazarus-4.6
+4=+ Added support for exFAT file system
 5=+ RPM and DEB packages
 6=
-7=v0.9
-8=+ Unification of the source code for Mageia-8/9
-9=+ Exclusion of card readers (0B) and optical drives (srX)
-10=
-11=v0.8
-12=+ Improved kdesu/pkexec startup script
-13=+ Release for Mageia-9 and higher
-14=
-15=v0.7
-16=+ Release for Mageia-9 and higher
-17=+ lsblk v2.38 (added the -A option)
-18=+ Plasma: LCL Scaling (Hi-DPI) and selective launch via kdesu
+7=v1.0
+8=+ The flash drive search procedure has been improved
+9=+ The current operation log output has been improved
+10=+ RPM and DEB packages
+11=
+12=v0.9
+13=+ Unification of the source code for Mageia-8/9
+14=+ Exclusion of card readers (0B) and optical drives (srX)
+15=
+16=v0.8
+17=+ Improved kdesu/pkexec startup script
+18=+ Release for Mageia-9 and higher
 19=
-20=v0.6
-21=+ double cancellation of all operations
-22=+ improved overall response and appearance
-23=
-24=v0.5
-25=+ dependencies: util-linux parted dosfstools
-26=+ switching to parted
-27=+ final release
+20=v0.7
+21=+ Release for Mageia-9 and higher
+22=+ lsblk v2.38 (added the -A option)
+23=+ Plasma: LCL Scaling (Hi-DPI) and selective launch via kdesu
+24=
+25=v0.6
+26=+ double cancellation of all operations
+27=+ improved overall response and appearance
 28=
-29=v0.4
-30=+ clearing the partition table: using wipefs instead of dd
-31=
-32=v0.3
-33=+ dependencies: util-linux dosfstools
-34=
-35=v0.2
-36=+ correction of log output
-37=+ cosmetic edits
-38=
-39=v0.1 - initial release
+29=v0.5
+30=+ dependencies: util-linux parted dosfstools
+31=+ switching to parted
+32=+ final release
+33=
+34=v0.4
+35=+ clearing the partition table: using wipefs instead of dd
+36=
+37=v0.3
+38=+ dependencies: util-linux dosfstools
+39=
+40=v0.2
+41=+ correction of log output
+42=+ cosmetic edits
+43=
+44=v0.1 - initial release
