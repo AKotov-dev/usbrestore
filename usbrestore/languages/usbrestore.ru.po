@@ -76,12 +76,9 @@ msgid "Requires root startup! Terminate!"
 msgstr "Требуется запуск от root! Отмена!"
 
 #: unit1.sselectitem1
-#, fuzzy
-#| msgid "FAT32 (compatibility with TVs, set-top boxes, etc.)"
 msgid "FAT32 (Compatible with TVs, set-top boxes, etc.)"
-msgstr "FAT32 (совместима с TV, приставками и т.п.)"
+msgstr "FAT32 (Совместимость с TV, приставками и т.п.)"
 
 #: unit1.sselectitem2
 msgid "exFAT (Extended File Allocation Table)"
 msgstr "exFAT (Расширенная таблица размещения файлов)"
-

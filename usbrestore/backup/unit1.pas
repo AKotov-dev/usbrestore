@@ -43,7 +43,7 @@ resourcestring
   SDestroyData1 = 'All data on the selected device ';
   SDestroyData2 = ' will be destroyed! Continue?';
   SRootPrivileges = 'Requires root startup! Terminate!';
-  SSelectItem1 = 'FAT32 (compatibility with TVs, set-top boxes, etc.)';
+  SSelectItem1 = 'FAT32 (Compatible with TVs, set-top boxes, etc.)';
   SSelectItem2 = 'exFAT (Extended File Allocation Table)';
 
 implementation

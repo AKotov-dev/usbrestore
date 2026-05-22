@@ -1,17 +1,17 @@
 object SelectForm: TSelectForm
-  Left = 323
-  Height = 241
-  Top = 125
+  Left = 324
+  Height = 228
+  Top = 124
   Width = 470
   Caption = 'File system selection'
-  ClientHeight = 241
+  ClientHeight = 228
   ClientWidth = 470
   LCLVersion = '4.6.0.0'
   object RadioGroup1: TRadioGroup
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 8
-    Height = 105
+    Height = 89
     Top = 8
     Width = 454
     Anchors = [akTop, akLeft, akRight]
@@ -24,7 +24,7 @@ object SelectForm: TSelectForm
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 1
-    ClientHeight = 103
+    ClientHeight = 87
     ClientWidth = 452
     ItemIndex = 0
     Items.Strings = (
@@ -36,7 +36,7 @@ object SelectForm: TSelectForm
   object Label1: TLabel
     Left = 8
     Height = 17
-    Top = 128
+    Top = 112
     Width = 48
     Caption = 'Label1'
     Font.Color = clRed
@@ -52,7 +52,7 @@ object SelectForm: TSelectForm
     AnchorSideBottom.Side = asrBottom
     Left = 337
     Height = 38
-    Top = 193
+    Top = 180
     Width = 125
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 8
@@ -71,7 +71,7 @@ object SelectForm: TSelectForm
     AnchorSideBottom.Side = asrBottom
     Left = 208
     Height = 38
-    Top = 193
+    Top = 180
     Width = 125
     Anchors = [akTop, akRight, akBottom]
     BorderSpacing.Right = 4
