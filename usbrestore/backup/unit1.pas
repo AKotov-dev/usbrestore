@@ -6,13 +6,14 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Buttons,
-  ComCtrls, IniPropStorage, Process, DefaultTranslator, BaseUnix;
+  ComCtrls, IniPropStorage, Process, DefaultTranslator, ExtCtrls, BaseUnix;
 
 type
 
   { TMainForm }
 
   TMainForm = class(TForm)
+    Image1: TImage;
     IniPropStorage1: TIniPropStorage;
     Label1: TLabel;
     ProgressBar1: TProgressBar;

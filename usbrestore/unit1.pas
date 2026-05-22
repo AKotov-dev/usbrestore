@@ -6,13 +6,14 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Buttons,
-  ComCtrls, IniPropStorage, Process, DefaultTranslator, BaseUnix;
+  ComCtrls, IniPropStorage, Process, DefaultTranslator, ExtCtrls, BaseUnix;
 
 type
 
   { TMainForm }
 
   TMainForm = class(TForm)
+    Image1: TImage;
     IniPropStorage1: TIniPropStorage;
     Label1: TLabel;
     ProgressBar1: TProgressBar;
@@ -135,8 +136,21 @@ begin
 end;
 
 procedure TMainForm.FormShow(Sender: TObject);
+var
+  bmp: TBitmap;
 begin
   IniPropStorage1.Restore;
+
+  // Устраняем баг иконки приложения
+  bmp := TBitmap.Create;
+  try
+    bmp.PixelFormat := pf32bit;
+    bmp.Assign(Image1.Picture.Graphic);
+    Application.Icon.Assign(bmp);
+  finally
+    bmp.Free;
+  end;
+
   MainForm.Caption := Application.Title;
   ReloadBtn.Width := ReloadBtn.Height;
 
