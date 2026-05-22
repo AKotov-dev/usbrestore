@@ -29,6 +29,7 @@ msgid "Reread"
 msgstr ""
 
 #: tmainform.startbtn.caption
+msgctxt "tmainform.startbtn.caption"
 msgid "Start"
 msgstr ""
 
@@ -38,6 +39,24 @@ msgstr ""
 
 #: tmainform.stopbtn.caption
 msgid "Stop"
+msgstr ""
+
+#: tselectform.cancelbtn.caption
+msgctxt "tselectform.cancelbtn.caption"
+msgid "Cancel"
+msgstr ""
+
+#: tselectform.caption
+msgid "File system selection"
+msgstr ""
+
+#: tselectform.label1.caption
+msgid "Label1"
+msgstr ""
+
+#: tselectform.startbtn.caption
+msgctxt "tselectform.startbtn.caption"
+msgid "Start"
 msgstr ""
 
 #: unit1.sdestroydata1
@@ -50,5 +69,13 @@ msgstr ""
 
 #: unit1.srootprivileges
 msgid "Requires root startup! Terminate!"
+msgstr ""
+
+#: unit1.sselectitem1
+msgid "FAT32 (Compatible with TVs, set-top boxes, etc.)"
+msgstr ""
+
+#: unit1.sselectitem2
+msgid "exFAT (Extended File Allocation Table)"
 msgstr ""
 

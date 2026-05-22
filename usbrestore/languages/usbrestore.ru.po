@@ -33,6 +33,7 @@ msgid "Reread"
 msgstr "Перечитать"
 
 #: tmainform.startbtn.caption
+msgctxt "tmainform.startbtn.caption"
 msgid "Start"
 msgstr "Старт"
 
@@ -43,6 +44,24 @@ msgstr "Лицензия: GPLv3   Автор: alex_q_2000 (C) 2026   https://git
 #: tmainform.stopbtn.caption
 msgid "Stop"
 msgstr "Стоп"
+
+#: tselectform.cancelbtn.caption
+msgctxt "tselectform.cancelbtn.caption"
+msgid "Cancel"
+msgstr "Отмена"
+
+#: tselectform.caption
+msgid "File system selection"
+msgstr "Выбор файловой системы"
+
+#: tselectform.label1.caption
+msgid "Label1"
+msgstr ""
+
+#: tselectform.startbtn.caption
+msgctxt "tselectform.startbtn.caption"
+msgid "Start"
+msgstr "Старт"
 
 #: unit1.sdestroydata1
 msgid "All data on the selected device "
@@ -55,3 +74,14 @@ msgstr " будут уничтожены! Продолжить?"
 #: unit1.srootprivileges
 msgid "Requires root startup! Terminate!"
 msgstr "Требуется запуск от root! Отмена!"
+
+#: unit1.sselectitem1
+#, fuzzy
+#| msgid "FAT32 (compatibility with TVs, set-top boxes, etc.)"
+msgid "FAT32 (Compatible with TVs, set-top boxes, etc.)"
+msgstr "FAT32 (совместима с TV, приставками и т.п.)"
+
+#: unit1.sselectitem2
+msgid "exFAT (Extended File Allocation Table)"
+msgstr "exFAT (Расширенная таблица размещения файлов)"
+

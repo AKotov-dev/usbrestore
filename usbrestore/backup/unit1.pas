@@ -43,10 +43,12 @@ resourcestring
   SDestroyData1 = 'All data on the selected device ';
   SDestroyData2 = ' will be destroyed! Continue?';
   SRootPrivileges = 'Requires root startup! Terminate!';
+  SSelectItem1 = 'FAT32 (compatibility with TVs, set-top boxes, etc.)';
+  SSelectItem2 = 'exFAT (Extended File Allocation Table)';
 
 implementation
 
-uses start_trd;
+uses unit2;
 
   {$R *.lfm}
 
@@ -111,14 +113,18 @@ end;
 
 //Запуск ремонта
 procedure TMainForm.StartBtnClick(Sender: TObject);
-var
-  FStartRestore: TThread;
 begin
-  if MessageDlg(SDestroyData1 + #13#10 + '[ ' + DevBox.Text + ' ]' +
-    SDestroyData2, mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  with SelectForm do
   begin
-    FStartRestore := StartRestore.Create(False);
-    FStartRestore.Priority := tpHighest;
+    Label1.Caption := SDestroyData1 + #13#10 + '[ ' + DevBox.Text + ' ]' + SDestroyData2;
+
+    RadioGroup1.Items[0] := SSelectItem1;
+    RadioGroup1.Items[1] := SSelectItem2;
+
+    Left := MainForm.Left + (MainForm.Width div 2 - SelectForm.Width div 2);
+    Top := MainForm.Top + (MainForm.Height div 2 - SelectForm.Height div 2);
+
+    SelectForm.ShowModal;
   end;
 end;
 

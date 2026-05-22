@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 324
+  Left = 655
   Height = 621
-  Top = 123
+  Top = 115
   Width = 849
   Caption = 'USBRestore'
   ClientHeight = 621

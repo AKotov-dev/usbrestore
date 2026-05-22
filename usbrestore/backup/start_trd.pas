@@ -24,7 +24,7 @@ type
 
 implementation
 
-uses Unit1;
+uses Unit1, Unit2;
 
   { TRD }
 
@@ -48,8 +48,10 @@ begin
     ExProcess.Executable := 'bash';
     ExProcess.Parameters.Add('-c');
 
+    if SelectForm.RadioGroup1.ItemIndex = 0 then
+
     //Группа команд (FAT32)
-  {  ExProcess.Parameters.Add('usb=' + Copy(MainForm.DevBox.Text, 1, 8) +
+    ExProcess.Parameters.Add('usb=' + Copy(MainForm.DevBox.Text, 1, 8) +
       '; umount -l $usb ${usb}1 ${usb}2 ${usb}3 ${usb}4 2>/dev/null; ' +
       'echo -e "Creating a dos partition label..." && ' +
       'wipefs -a $usb && parted -s $usb mklabel msdos && ' +
@@ -61,7 +63,9 @@ begin
       'echo -e "\nChecking the partition ${usb}1..." && ' +
       'fsck.fat -a -w -v ${usb}1 && sync && ' +
       'echo -e "\nResult for $usb..." && parted -s $usb print && ' +
-      'echo "The operation was completed successfully..."');}
+      'echo "The operation was completed successfully..."');
+
+    else
 
     //Группа команд (FAT32)
     ExProcess.Parameters.Add('usb=' + Copy(MainForm.DevBox.Text, 1, 8) +
@@ -70,6 +74,7 @@ begin
       'wipefs -a $usb && parted -s $usb mklabel msdos && ' +
       'echo -e "\nCreating an exFAT partition..." && ' +
       'parted -s $usb mkpart primary 1MiB 100% && ' +
+      'parted -s $usb set 1 boot on && ' +
       'echo -e "\nFormatting the partition ${usb}1..." && ' +
       'mkfs.exfat -n "USBDRIVE" ${usb}1 && ' +
       'echo -e "\nChecking the partition ${usb}1..." && ' +

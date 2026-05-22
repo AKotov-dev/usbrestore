@@ -1,0 +1,6 @@
+{"version":1,"strings":[
+{"hash":175254654,"name":"tselectform.caption","sourcebytes":[70,105,108,101,32,115,121,115,116,101,109,32,115,101,108,101,99,116,105,111,110],"value":"File system selection"},
+{"hash":86477809,"name":"tselectform.label1.caption","sourcebytes":[76,97,98,101,108,49],"value":"Label1"},
+{"hash":5941396,"name":"tselectform.startbtn.caption","sourcebytes":[83,116,97,114,116],"value":"Start"},
+{"hash":77089212,"name":"tselectform.cancelbtn.caption","sourcebytes":[67,97,110,99,101,108],"value":"Cancel"}
+]}

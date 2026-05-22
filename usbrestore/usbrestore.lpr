@@ -12,7 +12,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms,
   Unit1,
-  start_trd { you can add units after this };
+  start_trd, Unit2 { you can add units after this };
 
   {$R *.res}
 
@@ -22,5 +22,6 @@ begin
   Application.Scaled:=True;
   Application.Initialize;
   Application.CreateForm(TMainForm, MainForm);
+  Application.CreateForm(TSelectForm, SelectForm);
   Application.Run;
 end.
