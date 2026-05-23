@@ -1,5 +1,5 @@
 # USBRestore
-**Restoring the factory settings of USB flash drives**
+**Restoring the factory settings of USB flash drives (FAT32 / exFAT)**
 
 **Dependencies:** util-linux parted dosfstools exfatprogs gtk2 (libgtk2.0-0 for Ubuntu)
 
